@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Arial, serif;
+      margin: 8px;
+      padding: 0;
+      background-color: white;
+      color: darkslateblue;
+    }
+
+    .navbar {
+      background-color: darkslateblue;
+      color: white;
+      padding: 15px 25px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav-menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+      background-color: darkblue;
+    }
+
+    .projects-section {
+      padding: 60px 20px;
+      text-align: center;
+      margin: 50px auto;
+      width: 80%;
+    }
+
+    .projects-section h1 {
+      font-size: 40px;
+      margin-bottom: 40px;
+      padding: 30px 10px;
+    }
+
+    .project-card {
+      margin-bottom: 40px;
+      padding: 25px;
+      background-color: white;
+      border: 8px solid darkslateblue;
+      border-radius: 12px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .project-card h2 {
+      color: darkslateblue;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: black;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      margin: 10px 0;
+      color: white;
+      background-color: darkslateblue;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      background-color: darkblue;
+    }
+
+    .project-card img {
+      width: 50%;
+      height: auto;
+      border-radius: 12px;
+      margin: 10px;
+      border: 5px solid darkslateblue;
+    }
+	
+	
+
+    /* --------- Dark Mode Styles --------- */
+    body.dark-mode {
+      background-color: #1e1e2f;
+      color: #f5f5f5;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #333;
+    }
+
+    body.dark-mode .nav-menu li a {
+      color: #fff;
+    }
+
+    body.dark-mode .project-card {
+      background-color: #2c2c3a;
+      border-color: #555;
+    }
+
+    body.dark-mode .project-card h2,
+    body.dark-mode .project-card p {
+      color: #f5f5f5;
+    }
+
+    #darkModeToggle {
+      padding: 5px 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      margin-left: 15px;
+      background-color: #f0f0f0;
+    }
+
+    body.dark-mode #darkModeToggle {
+      background-color: #555;
+      color: #fff;
+    }
+	/* Responsive Design */
+    @media (max-width: 768px) {
+      .home-section {
+        width: 95%;
+        padding: 30px 10px;
+      }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">A&D_Portfolio</div>
+	  <button id="darkModeToggle">Dark Mode 🌓</button> 
+      <ul class="nav-menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      
+    </div>
+  </header>
+
+  <main class="projects-section">
+    <h1>Our Projects</h1>
+
+    <div class="project-card">
+      <h2>Grey Modern Professional Business Project</h2>
+      <p>GeoLand is a Palestinian real estate company that buys large lands and sells them as smaller plots, with plans to expand to the UAE and Turkey.</p>
+      <a href="https://docs.google.com/presentation/d/1O-6QCwldlxbL8-PcumqQyl7hwPw00_ZS/edit?usp=sharing&ouid=114162818321968251516&rtpof=true&sd=true" target="_blank">View the Project</a>
+      <br>
+      <img src="Image/geo.PNG" alt="GeoLand logo" />
+    </div>
+
+    <div class="project-card">
+      <h2>Clinic Appointment Booking Website</h2>
+      <p>A simple website that allows patients to book appointments online with doctors. It features an easy-to-use interface and a well-organized schedule.</p>
+      <img src="Image/A2.jpeg" alt="Booking Interface">
+      <img src="Image/A1.jpeg" alt="Booking Interface">
+    </div>
+  </main>
+
+  <script>
+    const toggleButton = document.getElementById("darkModeToggle");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.removeItem("darkMode");
+      }
+    });
+  </script>
+
+</body>
+</html>

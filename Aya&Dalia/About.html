@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Arial,serif;
+      margin: 8px;
+      padding: 0;
+      background-color: white;
+      color: darkslateblue;
+    }
+
+    .navbar {
+      background-color: darkslateblue;
+      color: white;
+      padding: 15px 25px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav-menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+      background-color: darkblue;
+    }
+
+    .about-section {
+      padding: 60px 20px;
+      text-align: center;
+      margin: 50px auto;
+      width: 80%;
+    }
+
+    .about-section h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+      padding: 30px 10px;
+    }
+
+    .about-box {
+      font-size: 22px;
+      width: 70%;
+      padding: 25px;
+      border: 10px solid darkslateblue;
+      border-radius: 12px;
+      background-color: white;
+      margin: 30px auto;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .profile-images {
+      text-align: center;
+      margin: 30px 0;
+      background-color: white;
+      padding: 10px;
+    }
+
+    .person {
+      display: inline-block;
+      width: 200px;
+      margin: 0 15px;
+      text-align: center;
+    }
+
+    .person img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 10px solid darkslateblue;
+    }
+
+    .person p {
+      font-size: 20px;
+      color: darkslateblue;
+      margin-top: 10px;
+    }
+
+    .about-list {
+      font-size: 18px;
+      text-align: left;
+      max-width: 600px;
+      margin: 10px auto;
+      color: black;
+    }
+
+    .about-section h2 {
+      font-size: 28px;
+      color: darkslateblue;
+      margin-top: 40px;
+    }
+	 
+
+    /* --- Dark Mode  --- */
+    body.dark-mode {
+      background-color: #1e1e2f;
+      color: #f5f5f5;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #333;
+    }
+
+    body.dark-mode .about-box,
+    body.dark-mode .profile-images {
+      background-color: #2c2c3a;
+      border-color: #555;
+    }
+
+    body.dark-mode .nav-menu li a,
+    body.dark-mode .person p,
+    body.dark-mode .about-section h2,
+    body.dark-mode .about-list {
+      color: #f5f5f5;
+    }
+
+    #darkModeToggle {
+      padding: 5px 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      margin-left: 15px;
+      background-color: #f0f0f0;
+    }
+
+    body.dark-mode #darkModeToggle {
+      background-color: #555;
+      color: #fff;
+    }
+	
+	/* Responsive Design */
+    @media (max-width: 768px) {
+      .home-section {
+        width: 95%;
+        padding: 30px 10px;
+      }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">A&D_Portfolio</div>
+	  <button id="darkModeToggle">Dark Mode🌓</button> 
+      <ul class="nav-menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html" class="active">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+     
+    </div>
+  </header>
+
+  <main class="about-section">
+    <h1>About Us</h1>
+
+    <div class="profile-images">
+      <div class="person">
+        <img src="Image/A5.JPEG" alt="Aya's Photo">
+        <p>Aya</p>
+      </div>
+      <div class="person">
+        <img src="Image/A6.JPEG" alt="Dalia's Photo">
+        <p>Dalia</p>
+      </div>
+    </div>
+
+    <div class="about-box">
+      We are <strong>Aya & Dalia</strong>, colleagues in the same major. We love programming and design and enjoy building user-friendly websites that provide a smooth experience.
+    </div>
+
+    <h2>Education</h2>
+    <ul class="about-list">
+      <li>Bachelor's Degree in MIS – NNU</li>
+      <li>Graduation Year: 2027</li>
+    </ul>
+
+    <h2>Interests</h2>
+    <ul class="about-list">
+      <li>Web Development</li>
+      <li>UI/UX Design</li>
+      <li>Learning New Technologies</li>
+      <li>Open Source Projects</li>
+    </ul>
+
+    <h2>Achievements & Experience</h2>
+    <ul class="about-list">
+      <li>Built multiple personal web projects using HTML, CSS, and JavaScript</li>
+      <li>Completed online courses in front-end development (freeCodeCamp, Udemy)</li>
+      <li>Contributed to a volunteer website project as a UI designer</li>
+    </ul>
+  </main>
+
+ 
+  <script>
+    const toggleButton = document.getElementById("darkModeToggle");
+
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.removeItem("darkMode");
+      }
+    });
+  </script>
+
+</body>
+</html>
