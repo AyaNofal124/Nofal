@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Arial, serif;
+      margin: 8px;
+      padding: 0;
+      background-color: white;
+      color: darkslateblue;
+    }
+
+    .navbar {
+      background-color: darkslateblue;
+      color: white;
+      padding: 15px 25px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav-menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+      background-color: darkblue;
+    }
+
+    .contact-section {
+      padding: 60px 20px;
+      text-align: center;
+      margin: 50px auto;
+      width: 80%;
+    }
+
+    .contact-section h1 {
+      font-size: 40px;
+      margin-bottom: 40px;
+      padding: 30px 10px;
+    }
+
+    .contact-card {
+      background-color: white;
+      border: 8px solid darkslateblue;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      margin: auto;
+      text-align: left;
+    }
+
+    form label {
+      margin-top: 15px;
+      font-weight: bold;
+      display: block;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid lightgray;
+      font-size: 15px;
+      font-family: 'Times New Roman', serif;
+    }
+
+    form input[type="radio"],
+    form input[type="checkbox"] {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      background-color: darkslateblue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: darkblue;
+	  
+		  .submit-btn {
+	  margin-top: 20px;
+	  background-color: darkslateblue;
+	  color: white;
+	  padding: 10px 20px;
+	  border: none;
+	  border-radius: 6px;
+	  font-size: 16px;
+	  cursor: pointer;
+	  transition: background-color 0.3s;
+	}
+
+	.submit-btn:hover {
+	  background-color: darkblue;
+	}
+
+
+
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: darkslateblue;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    body.dark-mode {
+      background-color: #1e1e2f;
+      color: #f5f5f5;
+    }
+
+  
+    body.dark-mode .navbar {
+      background-color: #333;
+    }
+
+    body.dark-mode .contact-card {
+      background-color: #2c2c3a;
+      border-color: #555;
+    }
+
+    body.dark-mode .nav-menu li a {
+      color: #fff;
+    }
+
+    body.dark-mode .submit-btn {
+      background-color: #555;
+    }
+
+    #darkModeToggle {
+      padding: 5px 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">A&D_Portfolio</div>
+	  <button id="darkModeToggle">Dark Mode🌓</button> 
+      <ul class="nav-menu">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html" class=<"active">Contact</a></li>
+      </ul>
+      
+    </div>
+  </header>
+
+  <main class="contact-section">
+    <h1>Contact Us</h1>
+    <div class="contact-card">
+      <form id="contactForm">
+        <label>Full Name </label>
+        <input type="text" id="name" required minlength="3" pattern="[A-Za-z\s]+" />
+
+        <label>Email Address </label>
+        <input type="email" id="email" required />
+
+        <label>Phone Number (optional)</label>
+        <input type="tel" id="phone" />
+
+        <label> Subject </label>
+        <input type="text" id="subject" required minlength="5" />
+
+        <label>Message </label>
+        <textarea id="message" required minlength="10" maxlength="500"></textarea>
+
+        <div class="radio-group">
+          <label>Preferred Contact Method </label>
+          <input type="radio" name="contactMethod" value="Email" required /> Email
+          <input type="radio" name="contactMethod" value="Phone" /> Phone
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="subscribe" />
+          <label for="subscribe">Subscribe to Newsletter</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+		
+
+
+      </form>
+
+      <div class="social-links">
+        <p>Connect with us:</p>
+        <a href="https://www.facebook.com/share/1HYVhKvuNj/?mibextid=wwXIfr" target="_blank">Facebook Dalia</a> _
+        <a href="https://www.facebook.com/share/1AhTELjhyh/" target="_blank">Facebook Aya</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      const name = document.getElementById("name").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (name.length < 3 || !/^[A-Za-z\s]+$/.test(name)) {
+        alert("Full Name must be at least 3 characters and contain only letters and spaces.");
+        event.preventDefault();
+        return;
+      }
+
+      if (subject.length < 5) {
+        alert("Subject must be at least 5 characters.");
+        event.preventDefault();
+        return;
+      }
+
+      if (message.length < 10 || message.length > 500) {
+        alert("Message must be between 10 and 500 characters.");
+        event.preventDefault();
+        return;
+      }
+
+      if (phone !== "" && !/^\+\d{10,15}$/.test(phone) && !/^\(\d{3}\)\s\d{3}-\d{4}$/.test(phone)) {
+        alert("Phone number must be in a valid format: +1234567890 or (123) 456-7890.");
+        event.preventDefault();
+        return;
+      }
+
+      const contactMethods = document.querySelectorAll('input[name="contactMethod"]:checked');
+      if (contactMethods.length === 0) {
+        alert("Please select a preferred contact method.");
+        event.preventDefault();
+        return;
+      }
+    });
+
+  
+    const toggleButton = document.getElementById("darkModeToggle");
+
+    
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.removeItem("darkMode");
+      }
+    });
+  </script>
+
+</body>
+</html>
